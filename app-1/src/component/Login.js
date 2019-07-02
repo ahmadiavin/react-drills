@@ -39,7 +39,7 @@ class Login extends Component {
                 onChange={this.handleUpdatePassword}
                 placeholder="Password"/>
                
-                <button onClick={this.loginUser}>>Login</button>
+                <button onClick={this.loginUser}>Login</button>
             </div>
         )
     }
