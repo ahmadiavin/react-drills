@@ -5,6 +5,7 @@ import Image from "./component/Image"
 import List from "./component/List"
 import Todobutton from "./component/Todobutton"
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -34,11 +35,11 @@ class App extends Component {
 
         <input value={this.state.newItem} onChange={this.handleChange} />
         <Todobutton action={this.addToStuff.bind(this, this.state.newItem)}>
-          Click me to add items
+         add stuff
         </Todobutton>
 
 
-        <List title="List of Items" list={this.state.stuff} />
+        <List title="stuff to do" list={this.state.stuff} />
 
 
 
