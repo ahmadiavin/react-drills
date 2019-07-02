@@ -5,8 +5,6 @@ class Image extends Component{
         return (
             <div>
                 <img  src={this.props.url} alt="Placeholder" />
-
-            <caption style={{textAlign: "center"}}>Placeholder</caption>
             </div>
         )
     }
