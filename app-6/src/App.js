@@ -1,18 +1,48 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import List from "./List"
+import Todobutton from "./Todobutton"
+
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state ={
+      stuff: ['code', 'sleep'],
+      newItem: ""
+    }
+    this.addToStuff = this.addToStuff.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  addToStuff(item) {
+    this.setState({
+      stuff: this.state.stuff.concat([item])
+    })
+  }
+
+  handleChange(event) {
+    this.setState({
+      newItem: event.target.value
+    })
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <List title="stuff to do" list={this.state.stuff} />
+        <br></br>
+
+        <input value={this.state.newItem} onChange={this.handleChange} />
+        <Todobutton action={this.addToStuff.bind(this, this.state.newItem)}>
+         add stuff
+        </Todobutton>
+
+
+        
+
+
+
+        
       </div>
     );
   }
